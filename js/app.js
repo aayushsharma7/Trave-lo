@@ -33,6 +33,9 @@ update(0);
 
 
 window.addEventListener("mousemove", (e) => {
+    if(timeline.isActive()) return;
+
+
     xValue = e.clientX - window.innerWidth / 2
     yValue = e.clientY - window.innerHeight / 2
 
@@ -80,6 +83,15 @@ timeline.from(".text h1", {
         duration: 1.5,
     },
     "3"
+)
+
+.from(
+    ".hide",
+    {
+    opacity: 0,
+    duration: 1.5,
+}, 
+"3"
 );
 
 
