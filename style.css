@@ -51,6 +51,10 @@ header ul a{
     font-size: 1.05rem;
     padding: 0 3rem;
 }
+.volume a {
+    font-size: 1.05rem;
+    padding: 0 3rem;
+}
 
 .hamburger a{
     padding: 0;
