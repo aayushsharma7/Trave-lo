@@ -3,6 +3,10 @@
 .logo{
     width: 100px;
 }
+
+.logo:hover{
+    cursor: pointer;
+}
 header {
     position: absolute;
     z-index: 9999;
@@ -34,6 +38,11 @@ header ul a{
     font-weight: 600;
     font-size: 0.83rem;
 }
+
+.navhead:hover{
+    text-decoration: underline;
+}
+
 .search a {
     font-size: 1.05rem;
     padding: 0 3rem;
@@ -187,7 +196,6 @@ body{
     color: #333;
     font-weight: 600;
 }
-
 
 .wrapper .register-link{
     font-size: 14.5px;
