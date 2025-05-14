@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+
+    <title>Authentication • Travelo</title>
+    
+    <link rel="stylesheet" href="auth.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+    <style>
+        .tab-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+        
+        .tab {
+            padding: 3px 20px;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            font-size: 18px;
+            font-weight: 500;
+            color: rgb(63, 47, 47);
+            opacity: 0.6;
+            transition: opacity 0.3s;
+        }
+        
+        .tab.active {
+            opacity: 1;
+            border-bottom: 2px solid black;
+        }
+        
+        .form-container {
+            display: none;
+        }
+        
+        .form-container.active {
+            display: block;
+        }
+    </style>
+
+</head>
+
+<body class="login-body" id="auth-body">
+    <header>
+        <nav>
+          <a href="index.html">
+            <img src="img/logodark.png" alt="Travelo" class="logo">
+          </a>
+          <ul>
+            <li class="navhead">
+              <a href="#" id="login-nav">Login</a>
+            </li>
+            <li class="navhead">
+              <a href="#" id="signup-nav">Sign up</a>
+            </li>
+            <li class="search">
+              <a href="#">
+                <i class="fa-solid fa-magnifying-glass"></i> 
+              </a>
+            </li>
+            <li class="hamburger">
+              <a href="#">
+                <div class="bar"></div>
+              </a>
+            </li>
+          </ul>
+        </nav>
+    </header>
+    
+    <div class="wrapper">
+        <div class="tab-container">
+            <button class="tab active" id="login-tab">Login</button>
+            <button class="tab" id="signup-tab">Sign Up</button>
+        </div>
+        
+        <!-- Login Form -->
+        <div class="form-container active" id="login-form">
+            <form action="">
+                <h1>Login</h1>
+                <div class="input-box">
+                    <input type="text" placeholder="Username / Email" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="Password" required>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+                <div class="remember-forgot login-remember-forgot">
+                    <label>
+                        <input type="checkbox">Remember me
+                    </label>
+                    <a href="#">Forgot password?</a>
+                </div>
+
+                <button type="submit" class="btn">Login</button>
+                <div class="register-link">
+                    <p>Don't have an account? <a href="#" id="to-signup">Register</a></p>
+                </div>
+            </form>
+        </div>
+        
+        <!-- Signup Form -->
+        <div class="form-container" id="signup-form">
+            <form action="">
+                <h1>Sign Up</h1>
+                <div class="input-box">
+                    <input type="username" placeholder="Username" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box">
+                    <input type="email" placeholder="Email" required>
+                    <i class='bx bxs-envelope'></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="Password" required>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+                <div class="remember-forgot signup-remember-forgot">
+                    <label>
+                        <input type="checkbox"> I agree to the <a href="#">terms & conditions.</a>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn">Register</button>
+                <div class="register-link">
+                    <p>Already have an account? <a href="#" id="to-login">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Get elements
+        const authBody = document.getElementById('auth-body');
+        const loginForm = document.getElementById('login-form');
+        const signupForm = document.getElementById('signup-form');
+        const loginTab = document.getElementById('login-tab');
+        const signupTab = document.getElementById('signup-tab');
+        const toSignup = document.getElementById('to-signup');
+        const toLogin = document.getElementById('to-login');
+        const loginNav = document.getElementById('login-nav');
+        const signupNav = document.getElementById('signup-nav');
+        
+        // Function to switch to login
+        function showLogin() {
+            loginForm.classList.add('active');
+            signupForm.classList.remove('active');
+            loginTab.classList.add('active');
+            signupTab.classList.remove('active');
+            authBody.className = 'login-body';
+        }
+        
+        // Function to switch to signup
+        function showSignup() {
+            signupForm.classList.add('active');
+            loginForm.classList.remove('active');
+            signupTab.classList.add('active');
+            loginTab.classList.remove('active');
+            authBody.className = 'signup-body';
+        }
+        
+        // Event listeners
+        loginTab.addEventListener('click', showLogin);
+        signupTab.addEventListener('click', showSignup);
+        toSignup.addEventListener('click', (e) => {
+            e.preventDefault();
+            showSignup();
+        });
+        toLogin.addEventListener('click', (e) => {
+            e.preventDefault();
+            showLogin();
+        });
+        loginNav.addEventListener('click', (e) => {
+            e.preventDefault();
+            showLogin();
+        });
+        signupNav.addEventListener('click', (e) => {
+            e.preventDefault();
+            showSignup();
+        });
+    </script>
+</body>
+</html>

@@ -35,7 +35,7 @@ header ul a{
     padding: 0 1.5rem;
     text-transform: uppercase;
     font-weight: 600;
-    font-size: 0.83rem;
+    font-size: 1.02rem;
 }
 
 .navhead:hover{
@@ -92,6 +92,7 @@ header ul a{
 .hamburger .bar::after{
     top:  4.5px;
 }
+
 *{
     padding: 0;
     margin: 0;
@@ -99,7 +100,8 @@ header ul a{
     font-family: "Poppins", sans-serif;
 }
 
-body{
+/* Login page specific background */
+.login-body{
     background: url("img/loginbg1.png") no-repeat;
     background-size: cover;
     background-position: center;
@@ -108,6 +110,18 @@ body{
     align-items: center;
     min-height: 100vh;
 }
+
+/* Signup page specific background */
+.signup-body{
+    background: url("img/signupbg.png") no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
 .wrapper{
     width: 420px;
     background: transparent;
@@ -117,15 +131,13 @@ body{
     color: black;
     border-radius: 10px;
     padding: 30px 40px;
-
 }
 
 .wrapper h1{
     font-size: 36px;
     text-align: center;
-
-
 }
+
 .wrapper .input-box{
     position: relative;
     width: 100%;
@@ -147,8 +159,7 @@ body{
 }
 
 .input-box input::placeholder{
-    color: black;
-    
+    color: rgba(0, 0, 0, 0.6);
 }
 
 .input-box i{
@@ -157,13 +168,20 @@ body{
     top: 50%;
     transform: translateY(-50%);
     font-size: 20px;
-
-
 }
 
-.wrapper .remember-forgot{
+/* Login page specific styles */
+.login-remember-forgot{
     display: flex;
     justify-content: space-between;
+    font-size: 14.5px;
+    margin: -15px 0 15px;
+}
+
+/* Signup page specific styles */
+.signup-remember-forgot{
+    display: flex;
+    justify-content: center;
     font-size: 14.5px;
     margin: -15px 0 15px;
 }
@@ -211,5 +229,3 @@ body{
 .register-link p a:hover{
     text-decoration: underline;
 }
-
-
